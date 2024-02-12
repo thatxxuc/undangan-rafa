@@ -50,14 +50,14 @@ const request = (method, path) => {
         async then(...params) {
             return fetch(url + path, req)
                 .then((res) => res.json())
-                // .then((res) => {
-                //     if (res.error !== null) {
-                //         throw res.error[0];
-                //     }
+                .then((res) => {
+                    // if (res.error !== null) {
+                    //     throw res.error[0];
+                    // }
 
-                //     return res;
-                // })
-                // .then(...params);
+                    return res;
+                })
+                .then(...params);
         },
         token(token) {
             req.headers['Authorization'] = 'Bearer ' + token;
