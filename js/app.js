@@ -52,7 +52,6 @@ const request = (method, path) => {
             return fetch(url + path, req)
                 .then((res) => res.json())
                 .then((res) => {
-                    console.log(res, 'cek res')
                     if (res.error !== null) {
                         throw res.error[0];
                     }
@@ -398,8 +397,9 @@ const session = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
-                window.location.reload();
+                console.log(err, 'cek error login')
+                // alert(`Terdapat kesalahan: ${err}`);
+                // window.location.reload();
                 return;
             });
     };
@@ -432,8 +432,9 @@ const like = (() => {
         let id = button.getAttribute('data-uuid');
 
         if (!token) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -457,7 +458,8 @@ const like = (() => {
                     }
                 })
                 .catch((err) => {
-                    alert(`Terdapat kesalahan: ${err}`);
+                    console.log(err, 'cek error')
+                    // alert(`Terdapat kesalahan: ${err}`);
                 });
 
         } else {
@@ -474,7 +476,8 @@ const like = (() => {
                     }
                 })
                 .catch((err) => {
-                    alert(`Terdapat kesalahan: ${err}`);
+                    console.log(err, 'cek error')
+                    // alert(`Terdapat kesalahan: ${err}`);
                 });
         }
 
@@ -537,8 +540,9 @@ const comment = (() => {
         let token = localStorage.getItem('token') ?? '';
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -585,7 +589,8 @@ const comment = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
+                console.log(err, 'error')
+                // alert(`Terdapat kesalahan: ${err}`);
             });
 
         if (isSuccess) {
@@ -612,8 +617,9 @@ const comment = (() => {
         let token = localStorage.getItem('token') ?? '';
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -649,7 +655,8 @@ const comment = (() => {
             })
             .catch((err) => {
                 resetForm();
-                alert(`Terdapat kesalahan: ${err}`);
+                console.log(err, 'cek error')
+                // alert(`Terdapat kesalahan: ${err}`);
             });
 
         document.getElementById('ucapan').scrollIntoView({ behavior: 'smooth' });
@@ -723,8 +730,9 @@ const comment = (() => {
 
         let token = localStorage.getItem('token') ?? '';
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -741,7 +749,7 @@ const comment = (() => {
                     }
                 }
             })
-            .catch((err) => alert(`Terdapat kesalahan: ${err}`));
+            .catch((err) => console.log(err, 'cek error'));//alert(`Terdapat kesalahan: ${err}`));
     };
 
     const renderLoading = (num) => {
@@ -775,8 +783,9 @@ const comment = (() => {
         let id = document.getElementById('id-balasan').getAttribute('data-uuid');
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -818,7 +827,8 @@ const comment = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
+                console.log(err, 'cek error')
+                // alert(`Terdapat kesalahan: ${err}`);
             });
 
         if (isSuccess) {
@@ -841,8 +851,9 @@ const comment = (() => {
         let komentar = formPesan.value;
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -877,7 +888,8 @@ const comment = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
+                console.log(err, 'cek error')
+                // alert(`Terdapat kesalahan: ${err}`);
             });
 
         if (isSuccess) {
@@ -902,8 +914,9 @@ const comment = (() => {
         let id = button.getAttribute('data-uuid');
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -922,7 +935,8 @@ const comment = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
+                console.log(err, 'cek')
+                // alert(`Terdapat kesalahan: ${err}`);
             });
 
         button.innerText = tmp;
@@ -940,8 +954,9 @@ const comment = (() => {
         let token = localStorage.getItem('token') ?? '';
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
-            window.location.reload();
+            console.log('Terdapat kesalahan, token kosong !')
+            // alert('Terdapat kesalahan, token kosong !');
+            // window.location.reload();
             return;
         }
 
@@ -973,7 +988,8 @@ const comment = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
+                console.log(err, 'cek error')
+                // alert(`Terdapat kesalahan: ${err}`);
             });
 
         button.disabled = false;
