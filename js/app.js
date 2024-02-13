@@ -38,7 +38,8 @@ const request = (method, path) => {
         method: method.toUpperCase(),
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*",
         }
     };
 
@@ -51,9 +52,10 @@ const request = (method, path) => {
             return fetch(url + path, req)
                 .then((res) => res.json())
                 .then((res) => {
-                    // if (res.error !== null) {
-                    //     throw res.error[0];
-                    // }
+                    console.log(res, 'cek res')
+                    if (res.error !== null) {
+                        throw res.error[0];
+                    }
 
                     return res;
                 })
