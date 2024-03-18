@@ -158,7 +158,7 @@ const util = (() => {
 
         let div = document.createElement('div');
         div.classList.add('m-2');
-        div.innerHTML = `<p class="mt-0 mb-1 mx-0 p-0 text-light">Kepada Yth Bapak/Ibu/Saudara/i</p><h2 class="text-light">${escapeHtml(name)}</h2>`;
+        div.innerHTML = `<p class="mt-0 mb-1 mx-0 p-0 text-light">Kepada Yth Bapak/Ibu/Saudara/i</p><h2 class="text-light text-capitalize">${escapeHtml(name)}</h2>`;
 
         document.getElementById('form-nama').value = name;
         document.getElementById('nama-tamu').appendChild(div);
@@ -646,7 +646,7 @@ const comment = (() => {
                         <h6>Balasan</h6>
                         <div id="id-balasan" data-uuid="${id}" class="card-body text-white bg-secondary shadow p-3 m-0 border border-secondary">
                             <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                <p class="text-white text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                                <p class="text-white text-truncate m-0 p-0 text-capitalize" style="font-size: 0.95rem;">
                                     <strong>${util.escapeHtml(res.data.nama)}</strong>
                                 </p>
                                 <small class="text-white m-0 p-0" style="font-size: 0.75rem;">${res.data.created_at}</small>
@@ -694,9 +694,9 @@ const comment = (() => {
 
         comment.forEach((data) => {
             result += `
-            <div class="card-body border-start bg-light py-2 ps-2 pe-0 my-2 ms-2 me-0" id="${data.uuid}">
+            <div class="card-body border-start bg-secondary py-2 ps-2 pe-0 my-2 ms-2 me-0" id="${data.uuid}">
                 <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <p class="text-white text-truncate m-0 p-0" style="font-size: 0.95rem;">
+                    <p class="text-white text-truncate m-0 p-0 text-capitalize" style="font-size: 0.95rem;">
                         <strong>${util.escapeHtml(data.nama)}</strong>
                     </p>
                     <small class="text-white m-0 p-0" style="font-size: 0.75rem;">${data.created_at}</small>
@@ -717,7 +717,7 @@ const comment = (() => {
         <div class="card-body text-white bg-secondary shadow p-3 m-0 border border-secondary" data-parent="true" id="${data.uuid}">
             <div class="d-flex flex-wrap justify-content-between align-items-center">
                 <p class="text-white text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                    <strong class="me-1">${util.escapeHtml(data.nama)}</strong><i class="text-dark fa-solid ${data.hadir ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i>
+                    <strong class="me-1 text-capitalize">${util.escapeHtml(data.nama)}</strong><i class="text-dark fa-solid ${data.hadir ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i>
                 </p>
                 <small class="text-white m-0 p-0" style="font-size: 0.75rem;">${data.created_at}</small>
             </div>
